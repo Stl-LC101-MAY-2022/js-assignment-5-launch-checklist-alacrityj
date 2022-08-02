@@ -23,11 +23,11 @@ window.addEventListener("load", function() {
                 
             }
             else if ((validateInput(pilotName.value) === "Is a Number") || (validateInput(copilotName.value) === "Is a Number")) {
-                alert("ONEMake sure to enter valid information for each field!"); 
+                alert("Make sure to enter valid information for each field!"); 
                 
             }
             else if ((validateInput(fuelLevel.value) === "Not a Number") || (validateInput(cargoMass.value) === "Not a Number")) {
-                alert("TWOMake sure to enter valid information for each field!");     
+                alert("Make sure to enter valid information for each field!");     
             } else {
             list.style.visibility = "visible";  
             
