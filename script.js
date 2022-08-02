@@ -23,26 +23,17 @@ window.addEventListener("load", function() {
                 
             }
             else if ((validateInput(pilotName.value) === "Is a Number") || (validateInput(copilotName.value) === "Is a Number")) {
-                console.log(pilotName.value);
-                console.log(copilotName.value);
                 alert("ONEMake sure to enter valid information for each field!"); 
                 
             }
             else if ((validateInput(fuelLevel.value) === "Not a Number") || (validateInput(cargoMass.value) === "Not a Number")) {
-                alert("TWOMake sure to enter valid information for each field!");
-                console.log(fuelLevel.value);
-                console.log(cargoMass.value);
-                
+                alert("TWOMake sure to enter valid information for each field!");     
             } else {
-            list.style.visibility = "visible";
-            console.log(pilotName.value);
-            console.log(copilotName.value);  
+            list.style.visibility = "visible";  
             
             pilotStat.innerHTML = `
                 Pilot ${pilotName.value} is ready for launch
             `
-            console.log(pilotStat.innerHTML);
-            console.log(pilotStat);
             copilotStat.innerHTML = `
                 Co-pilot ${copilotName.value} is ready for launch
             `
@@ -65,16 +56,16 @@ window.addEventListener("load", function() {
             }
         }
  });
-//    let listedPlanets;
-//    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-//    let listedPlanetsResponse;
-//    listedPlanetsResponse.then(function (result) {
-//        listedPlanets = result;
-//        console.log(listedPlanets);
-//    }).then(function () {
-//        console.log(listedPlanets);
-//        // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
-//    })
+   let listedPlanets;
+   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+   let listedPlanetsResponse = myFetch.planetsReturned;
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
+   })
 
 
    

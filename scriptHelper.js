@@ -27,8 +27,6 @@ function validateInput(testInput) {
     else if (isNaN(testInput)) {
     inputValType = "Not a Number";
     }
-    console.log(inputValType, testInput, "-", isNaN(testInput));
-    
     return inputValType;
 }
 
