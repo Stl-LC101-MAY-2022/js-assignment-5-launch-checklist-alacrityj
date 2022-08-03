@@ -1,9 +1,28 @@
 // Write your JavaScript code here!
 
+// const { pickPlanet } = require("./scriptHelper");
+
 // const { formSubmission } = require("./scriptHelper"); // Necessary for grading?? or only necessary to use formSub which I do not need? 
 
 window.addEventListener("load", function() {
     
+    let listedPlanets;
+   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
+   let listedPlanetsResponse = myFetch(); 
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       
+       // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
+     
+    
+       let planet = pickPlanet(listedPlanets);
+       addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
+    //    console.log(planet); 
+   })
+
     let form = document.querySelector("form");
     form.addEventListener("submit", function(event) {
         event.preventDefault();
@@ -56,17 +75,6 @@ window.addEventListener("load", function() {
             }
         }
  });
-   let listedPlanets;
-   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = myFetch(); 
-   listedPlanetsResponse.then(function (result) {
-       listedPlanets = result;
-       console.log(listedPlanets);
-   }).then(function () {
-       console.log(listedPlanets);
-       // Below this comment call the appropriate helper functions to pick a planet from the list of planets and add that information to your destination.
-   })
-
 
    
 });

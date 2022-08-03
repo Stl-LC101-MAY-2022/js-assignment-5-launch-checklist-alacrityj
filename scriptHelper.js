@@ -2,6 +2,7 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
+    
    // Here is the HTML formatting for our mission target div.
    /*
                 <h2>Mission Destination</h2>
@@ -14,6 +15,22 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                 </ol>
                 <img src="">
    */
+
+    // TODO: Use document parameter to change innerHTML - no return // how to make this picked planet name, diameter, etc??
+    
+    let missionTargetVar = document.getElementById("missionTarget");
+    missionTargetVar.innerHTML  = `
+    <h2>Mission Destination</h2>
+    <ol>
+        <li>Name: ${name}</li> 
+        <li>Diameter: ${diameter}</li>
+        <li>Star: ${star}</li>
+        <li>Distance from Earth: ${distance}</li>
+        <li>Number of Moons: ${moons} </li>
+    </ol>
+    <img src="${imageUrl}">
+    `
+
 }
 
 function validateInput(testInput) {
@@ -48,6 +65,10 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
+    // TODO: Use math.random() to *return* one random planet
+    let planetIndex = Math.floor(Math.random() * planets.length);
+    let pickedPlanet = planets[planetIndex];
+    return pickedPlanet;
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
